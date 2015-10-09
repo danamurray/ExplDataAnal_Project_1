@@ -35,13 +35,13 @@ plot( df$datetime, df$Global_active_power, xlab = "",
 # (1,2) plot new one for Voltage
 with(df, plot( datetime, Voltage, type = 'l') )
 
-# (2,1) plot same as plot 3
+# (2,1) plot same as plot 3, except for the legend box that is absent
 plot ( df$datetime, df$Sub_metering_1, col = 1, ylab = "Energy sub metering", type = 'l')
 lines( df$datetime, df$Sub_metering_2, col = 2, type = 'l')
 lines( df$datetime, df$Sub_metering_3, col = 4, type = 'l')
 legend( "topright" , 
         legend = c("Sub_metering_1", "Sub_metering_2" ,"Sub_metering_3") ,
-        col = c(1,2,4), lty = 1 )
+        bty = "n", col = c(1,2,4), lty = 1 )
 
 # (2,2) plot new one for Global reactive power
 with(df, plot( datetime, Global_reactive_power, type = 'l') )
